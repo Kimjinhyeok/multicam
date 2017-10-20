@@ -82,3 +82,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/eclipse,windows
+/autoSlideImg/

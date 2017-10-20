@@ -1,0 +1,91 @@
+.slideshow{
+    overflow: hidden;
+    position: relative;
+    height: 465px;
+    background-color: black;
+
+}
+.slideshow .slideshow-slides{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.slideshow .slideshow-slides .slide{
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.slideshow .slideshow-slides .slide img{
+    /*display: none;*/
+    position: absolute;
+    left: 50%; /*position이 absolute라면 이렇게 하면 가운데 정렬이 됨*/
+    margin-left: -800px; /*이미지 크기의 반을 왼쪽으로 이동 */
+}
+
+.slideshow .slideshow-nav a,
+.slideshow .slideshow-indicator a{
+    overflow: hidden;
+
+}
+
+.slideshow .slideshow-nav a::before,
+.slideshow .slideshow-indicator a::before{
+    content: url(../img/sprites.png);
+    display: inline-block;
+}
+
+.slideshow-nav a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 72px;
+    height: 72px;
+    margin-top: -36px;
+}
+
+.slideshow-nav a.prev{
+    margin-left: -540px;
+}
+.slideshow-nav a.prev::before{
+    margin-top: -20px;
+}
+.slideshow-nav a.next{
+    margin-left: 480px;
+}
+
+.slideshow-nav a.next::before{
+    margin-top: -20px;
+    margin-left: -80px;
+}
+/* 맨 마지막, 처음 일 때 disabled를 추가 */
+.slideshow-nav a.disabled{
+    display: none;
+}
+
+.slideshow-indicator{
+    bottom: 30px;
+    height: 16px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    text-align: center;
+}
+
+.slideshow-indicator a{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 0 3px;
+}
+
+.slideshow-indicator a.active{
+    cursor: default;
+    /* 마우스 포인터를 일반으로 유지, 링크 클릭 모양이 안뜸 */
+}
+.slideshow-indicator a::before{
+    margin-left: -110px;
+}
+.slideshow-indicator a.active::before{
+    margin-left: -130px;
+}
